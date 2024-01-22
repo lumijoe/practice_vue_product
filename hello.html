@@ -14,17 +14,36 @@
         <p>{{ message }}</p> 
         <p v-text="message2"></p>
         <p v-pre>{{ message }}</p>
-        <a v-bind:href="url">{{ message3 }}</a>
+        <a v-bind:href="url">{{ message3 }}</a><br/>
+        <br/>
+        <a :href="url2">{{ message4 }}</a><br/>
+        <br/>
+        <input type="button" value="クリックしてください" v-bind:disabled="flag" />
+    </div>
+
+    <div id="appTwo">
+        <!-- Badケースhtmlに処理記述<p>{{  email.split('@')[0].toLowerCase() }}</p>ではなく、js側で処理を記述する -->
+        <p>{{ localEmail }}</p>
     </div>
    
-    <!-- Vueの設定３つ -->
+
+
+
+
+
+
+
+    <!-- Vueの設定３つーーーーーーーーーーーーーーーーーーーーーーーーーーー -->
+
     <!-- 1：適応するCDNの設定 https://ja.vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <!-- 2：万が一CDN障害でもローカルからライブラリをインポートさせオフライン環境で実行できる本番環境の設定、URLよりvue.min.jsをダウンロードしlibディレクトリに配置させ読み込ませる設定　https://v2.ja.vuejs.org/v2/guide/installation -->
     <script>
         window.Vue || document.write('<script src="lib/vue.min.js"><\/script>');
     </script>  
-    <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定） -->
+    <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定）-->
     <script src="js/hello.js"></script>
+
+    <!-- -----------------------------------------Vueの設定ここまで -->
 </body>
 </html>
