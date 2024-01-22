@@ -19,7 +19,7 @@ let appTwo = new Vue({
     data: {
         email1: 'Y-suzuki@example.com',
         email2: 'S-tAKESHI@example.com',
-        caseComputed: '引数不可のプロパティ、引数可のメソッドの違い',
+        caseComputed: '引数不可のプロパティ、引数可のメソッドの違い(生成、表示、破棄の処理について)',
         current: new Date().toLocaleString()
     },
 
@@ -43,6 +43,29 @@ let appTwo = new Vue({
         },
         randomMethods: function() {
             return Math.random();
+        }
+    }
+});
+
+new Vue({
+    el: '#appThree',
+    data: {
+        lifecycle: 'ライフサイクルフック(生成、表示、破棄の処理)、ウォッチャー',
+        name: '',
+        upperName: ''
+    },
+
+    created: function() {
+        this.delayFunc = _.debounce(this.getUpper, 2000);
+    },
+    watch: {
+        name: function(newValue, oldValue) {
+            this.delayFunc();
+        }
+    },
+    methods: {
+        getUpper: function() {
+            this.upperName = this.name.toUpperCase();
         }
     }
 });

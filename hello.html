@@ -34,6 +34,16 @@
             <div>現在日時：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ current }}</div>
         </form>
     </div>
+
+    <div id="appThree">
+        <h3>{{ lifecycle }}</h3>
+        <label>名前：
+            <input type="text" v-model="name" />
+        </label>
+        <p>入力された値：{{ upperName }}</p>
+    </div>
+
+
    
 
 
@@ -42,17 +52,16 @@
 
 
 
-    <!-- Vueの設定３つーーーーーーーーーーーーーーーーーーーーーーーーーーー -->
+    <!-- lodash設定1(jsファイルより手前の記述が必要),Vueの設定3ーーーーーーーーーーーーーーーーーーーーーーーーーーー -->
+        <!-- lodashをインポート -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script> 
 
-    <!-- 1：適応するCDNの設定 https://ja.vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <!-- 2：万が一CDN障害でもローカルからライブラリをインポートさせオフライン環境で実行できる本番環境の設定、URLよりvue.min.jsをダウンロードしlibディレクトリに配置させ読み込ませる設定　https://v2.ja.vuejs.org/v2/guide/installation -->
-    <script>
-        window.Vue || document.write('<script src="lib/vue.min.js"><\/script>');
-    </script>  
-    <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定）-->
-    <script src="js/hello.js"></script>
+        <!-- 1：適応するCDNの設定 https://ja.vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <!-- 2：万が一CDN障害でもローカルからライブラリをインポートさせオフライン環境で実行できる本番環境の設定、URLよりvue.min.jsをダウンロードしlibディレクトリに配置させ読み込ませる設定　https://v2.ja.vuejs.org/v2/guide/installation -->
+        <script>window.Vue || document.write('<script src="lib/vue.min.js"><\/script>');</script>  
+        <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定）-->
+        <script src="js/hello.js"></script>
 
-    <!-- -----------------------------------------Vueの設定ここまで -->
 </body>
 </html>
