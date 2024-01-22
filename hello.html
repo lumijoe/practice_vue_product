@@ -29,7 +29,7 @@
         
         <form>
             <input type="button" value="クリック" v-on:click="onclick" />
-            <div>算出プロパティの場合：静的：&nbsp;：{{ randomComputed }}</div>
+            <div>算出プロパティの場合：静的：&nbsp;：{{ randomComputed }}&nbsp;キャッシュされて更新されない</div>
             <div>メソッドの場合：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ randomMethods() }}</div>
             <div>現在日時：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ current }}</div>
         </form>
