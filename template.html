@@ -1,0 +1,40 @@
+<!-- template.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.svg" type="image/x-icon">
+    <title>Vue Test Product</title>
+</head>
+
+
+<body>
+    <h1>これがテンプレートです</h1>
+
+
+
+    <!-- Vueの設定３つ -->
+    <!-- 1：適応するCDNの設定 https://ja.vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- 2：万が一CDN障害でもローカルからライブラリをインポートさせオフライン環境で実行できる本番環境の設定、URLよりvue.min.jsをダウンロードしlibディレクトリに配置させ読み込ませる設定　https://v2.ja.vuejs.org/v2/guide/installation -->
+    <script>
+        window.Vue || document.write('<script src="lib/vue.min.js"><\/script>');
+    </script>  
+    <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定） -->
+    <script src="js/template.js"></script>
+</body>
+</html>
+
+
+<!-- 0122
+    ・icon：linkrel,href,type
+    ・title
+    ・body手前Vueのscript：CDNの設定
+    ・body手前Vueオフライン用script：オフライン実行環境、本番環境の設定
+    ・body手前読み込むjsのscript：jsの設定
+    
+
+
+-->
