@@ -21,9 +21,18 @@
         <input type="button" value="クリックしてください" v-bind:disabled="flag" />
     </div>
 
-    <div id="appTwo">
+    <div id="appTwo" style="background-color: aquamarine;">
+        <h3>{{ caseComputed }}</h3>
         <!-- Badケースhtmlに処理記述<p>{{  email.split('@')[0].toLowerCase() }}</p>ではなく、js側で処理を記述する -->
-        <p>{{ localEmail }}</p>
+        <p>引数不可：プロパティ：{{ localEmail }}</p>
+        <p>引数可能：メソッド&nbsp;&nbsp;&nbsp;：{{ localEmail2() }}</p>
+        
+        <form>
+            <input type="button" value="クリック" v-on:click="onclick" />
+            <div>算出プロパティの場合：静的：&nbsp;：{{ randomComputed }}</div>
+            <div>メソッドの場合：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ randomMethods() }}</div>
+            <div>現在日時：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ current }}</div>
+        </form>
     </div>
    
 
