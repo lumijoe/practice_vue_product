@@ -1,0 +1,110 @@
+<!-- hello.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.svg" type="image/x-icon">
+    <title>Vue Test Product / Hello </title>
+    <!-- CSSスタイル：Tailwindcss一旦解除中 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"> -->
+
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p> 
+        <p v-text="message2"></p>
+        <p v-pre>{{ message }}</p>
+        <a v-bind:href="url">{{ message3 }}</a><br/>
+        <br/>
+        <a :href="url2">{{ message4 }}</a><br/>
+        <br/>
+        <input type="button" value="クリックしてください" v-bind:disabled="flag" />
+    </div>
+
+    <div id="appTwo" style="background-color: aquamarine;">
+        <h3>{{ caseComputed }}</h3>
+        <!-- Badケースhtmlに処理記述<p>{{  email.split('@')[0].toLowerCase() }}</p>ではなく、js側で処理を記述する -->
+        <p>引数不可：プロパティ：{{ localEmail }}</p>
+        <p>引数可能：メソッド&nbsp;&nbsp;&nbsp;：{{ localEmail2() }}</p>
+        
+        <form>
+            <input type="button" value="クリック" v-on:click="onclick" />
+            <div>算出プロパティの場合：静的：&nbsp;：{{ randomComputed }}&nbsp;キャッシュされて更新されない</div>
+            <div>メソッドの場合：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ randomMethods() }}</div>
+            <div>現在日時：動的：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：{{ current }}</div>
+        </form>
+    </div>
+
+    <div id="appThree">
+        <h3>{{ lifecycle }}</h3>
+        <label>名前：
+            <input type="text" v-model="name" />
+        </label>
+        <p>入力された値：{{ upperName }}</p>
+    </div>
+
+    <div id="appFour" style="background-color: bisque;">
+        <h3>任意の引数を渡す</h3>
+        <p>{{ a }}+{{ b }}</p>
+        <button v-on:click="calculate">計算する</button>
+        <p>合計1：
+            <span v-if="amount1 !== 0">{{ amount1 }}</span>
+        </p>
+    </div>
+
+    <div id="appFive" style="background-color: pink;">
+        <h3>双方向データバインディング：フォーム：1.テキスト入力</h3>
+        <form>
+            <label for="name">{{ messageForName }}</label>
+            <input type="text" id="name" v-model="myName" />
+        </form>
+        <p>こんにちは!&nbsp;&nbsp;<span v-if="myName !==''">{{ myName }}さん!</span></p>
+    </div>
+
+    <div id="appSix" style="background-color: beige;">
+        <h3>双方向データバインディング：フォーム：2.ラジオボタン</h3>        
+        <form>
+            <label for="category">{{ messageForCategory }}</label><br/>
+            <input type="radio" id="categoryEat" value="通勤飲食" v-model="category">
+            <label for="categoryEat">通勤飲食</label>
+            <input type="radio" id="categoryEat" value="通勤定期" v-model="category">
+            <label for="categoryTrain">通勤定期</label>
+            <input type="radio" id="categoryEat" value="土曜弁当" v-model="category">
+            <label for="categorySatLanch">土曜弁当</label>
+            <input type="radio" id="categoryEat" value="会社弁当" v-model="category">
+            <label for="categoryComLanch">会社弁当</label>
+        </form>
+        <form>
+            <label for="amount">{{ messageForAmount }}</label>
+            <!-- typeをtext,v-model.numberで数値化可能 -->
+            <input type="text" id="amount" @input="handleInput" v-model.number="inputAmount" />
+        </form>
+        <!-- ０未満を非表示 -->
+        <p>結果：{{ category }}<span v-if="inputAmount >=0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
+    </div>
+
+
+   
+
+
+
+
+
+
+
+    <!-- lodash設定1(jsファイルより手前の記述が必要),Vueの設定3ーーーーーーーーーーーーーーーーーーーーーーーーーーー -->
+        <!-- lodashをインポート -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script> 
+
+        <!-- 1：適応するCDNの設定 https://ja.vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+        <!-- 2：万が一CDN障害でもローカルからライブラリをインポートさせオフライン環境で実行できる本番環境の設定、URLよりvue.min.jsをダウンロードしlibディレクトリに配置させ読み込ませる設定　https://v2.ja.vuejs.org/v2/guide/installation -->
+        <script>window.Vue || document.write('<script src="lib/vue.min.js"><\/script>');</script>  
+        <!-- 3：アプリ本体の設定（ユーザーコード、htmlファイルと同じ名前で設定）-->
+        <script src="js/test.js"></script>
+
+</body>
+</html>
