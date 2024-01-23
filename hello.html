@@ -79,9 +79,9 @@
         </form>
         <form>
             <label for="amount">{{ messageForAmount }}</label>
-            <input type="number" id="amount" v-model="inputAmount" />
+            <input type="number" id="amount" @input="handleInput" v-model="inputAmount" />
         </form>
-        <p>結果：{{ category }}<span v-if="inputAmount !==0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
+        <p>結果：{{ category }}<span v-if="inputAmount >=0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
     </div>
 
 

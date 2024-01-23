@@ -97,5 +97,12 @@ new Vue({
         category: '',
         messageForAmount: '金額を入力してください',
         inputAmount: 0
-    }
-})
+    },
+    methods: {
+        handleInput() {
+            if(this.inputAmount < 0) {
+                this.inputAmount = 0;
+            }
+        },
+    },
+});
