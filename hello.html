@@ -56,12 +56,32 @@
     </div>
 
     <div id="appFive" style="background-color: pink;">
-        <h3>双方向データバインディング：フォーム</h3>
+        <h3>双方向データバインディング：フォーム：1.テキスト入力</h3>
         <form>
             <label for="name">{{ messageForName }}</label>
             <input type="text" id="name" v-model="myName" />
         </form>
         <p>こんにちは!&nbsp;&nbsp;<span v-if="myName !==''">{{ myName }}さん!</span></p>
+    </div>
+
+    <div id="appSix" style="background-color: beige;">
+        <h3>双方向データバインディング：フォーム：2.ラジオボタン</h3>        
+        <form>
+            <label for="category">{{ messageForCategory }}</label><br/>
+            <input type="radio" id="categoryEat" value="通勤飲食" v-model="category">
+            <label for="categoryEat">通勤飲食</label>
+            <input type="radio" id="categoryEat" value="通勤定期" v-model="category">
+            <label for="categoryTrain">通勤定期</label>
+            <input type="radio" id="categoryEat" value="土曜弁当" v-model="category">
+            <label for="categorySatLanch">土曜弁当</label>
+            <input type="radio" id="categoryEat" value="会社弁当" v-model="category">
+            <label for="categoryComLanch">会社弁当</label>
+        </form>
+        <form>
+            <label for="amount">{{ messageForAmount }}</label>
+            <input type="number" id="amount" v-model="inputAmount" />
+        </form>
+        <p>結果：{{ category }}<span v-if="inputAmount !==0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
     </div>
 
 

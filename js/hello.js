@@ -89,3 +89,13 @@ new Vue({
         myName: ''
     }
 });
+
+new Vue({
+    el: '#appSix',
+    data: {
+        messageForCategory: 'カテゴリを選択してください',
+        category: '',
+        messageForAmount: '金額を入力してください',
+        inputAmount: 0
+    }
+})
