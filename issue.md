@@ -24,5 +24,5 @@
 - tailwind.config.js 自動生成
 - .gitignore ファイルを生成：touch .gitignore
 - .gitignore ファイルに node_modules を追加記述
-- 使用する html ファイルの head タグ内に link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"を記述
+- 使用する html ファイルの head タグ内に記述 link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css"
 - デフォルトの css が解除されてしまうので要注意
