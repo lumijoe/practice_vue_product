@@ -46,9 +46,13 @@
         <p>入力された値：{{ upperName }}</p>
     </div>
 
-    <div id="appFour" >
-        <h3 class="bg-pink-300">選択方法</h3>
-
+    <div id="appFour" style="background-color: bisque;">
+        <h3>任意の引数を渡す</h3>
+        <p>{{ a }}+{{ b }}</p>
+        <button v-on:click="calculate">計算する</button>
+        <p>合計1：
+            <span v-if="amount1 !== 0">{{ amount1 }}</span>
+        </p>
     </div>
 
 

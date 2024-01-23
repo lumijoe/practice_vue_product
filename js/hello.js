@@ -69,3 +69,17 @@ new Vue({
         }
     }
 });
+
+new Vue({
+    el: '#appFour',
+    data: {
+        a: 400,
+        b: 200,
+        amount1: 0 //初期値を設定 
+    },
+    methods: {
+        calculate: function() {
+            this.amount1 = this.a + this.b //計算結果をamount1に代入
+        }
+    }
+})
