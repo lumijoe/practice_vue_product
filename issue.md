@@ -11,6 +11,7 @@
 - オフライン環境本番バージョンインストール：https://v2.ja.vuejs.org/v2/guide/installation
 - 画像圧縮：I love PDF, Tiny PNG
 - Tailwindcss：npm install tailwindcss
+- vuetify：npm create vuetify
 
 ## CSS
 

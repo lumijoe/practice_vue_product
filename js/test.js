@@ -1,4 +1,4 @@
-// hello.js
+// test.js
 let app = new Vue({
     el: '#app',
     data: {
@@ -106,4 +106,8 @@ new Vue({
             }
         },
     },
+    vuetify: new Vuetify(),
 });
+
+
+
