@@ -55,6 +55,15 @@
         </p>
     </div>
 
+    <div id="appFive" style="background-color: pink;">
+        <h3>双方向データバインディング：フォーム</h3>
+        <form>
+            <label for="name">{{ messageForName }}</label>
+            <input type="text" id="name" v-model="myName" />
+        </form>
+        <p>こんにちは!&nbsp;&nbsp;<span v-if="myName !==''">{{ myName }}さん!</span></p>
+    </div>
+
 
    
 

@@ -9,8 +9,6 @@ let app = new Vue({
         url2: 'https://v2.ja.vuejs.org/v2/guide/installation',
         message4: '省略形で記述：Vue公式ページ',
         flag: false
-        
-
     }
 });
 
@@ -82,4 +80,12 @@ new Vue({
             this.amount1 = this.a + this.b //計算結果をamount1に代入
         }
     }
-})
+});
+
+new Vue({
+    el: '#appFive',
+    data: {
+        messageForName: '名前を入力してください',
+        myName: ''
+    }
+});
