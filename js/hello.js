@@ -99,6 +99,7 @@ new Vue({
         inputAmount: 0
     },
     methods: {
+        // 0未満を０に表示させる
         handleInput() {
             if(this.inputAmount < 0) {
                 this.inputAmount = 0;
