@@ -205,6 +205,183 @@
                 </v-card>
                 </template>
                 <!-- マテリアルUI：カード ここまで------------------------------------>
+
+                
+                <!-- マテリアルUI：カード ------------------------------------>
+                <template>
+                    <!-- カード設計 -->
+                    <v-card
+                    :loading="loading"
+                    class="mx-auto my-12"
+                    max-width="374"
+                    >
+                    <template slot="progress">
+                    <v-progress-linear
+                        color="deep-purple"
+                        height="10"
+                        indeterminate
+                    ></v-progress-linear>
+                    </template>
+                    <!-- 画像 -->
+                    <v-img
+                    height="250"
+                    src="./images/web01end.png"
+                    ></v-img>
+                    <!-- テキスト：タイトル -->
+                    <v-card-title>コーポレートサイト</v-card-title>
+                  
+                    
+                    <v-card-text>
+                       
+                        <!-- 横並び設定 -->
+                        <v-row
+                        align="center"
+                        class="mx-0 mb-2"
+                        >
+                            <!-- レート：星デザイン -->
+                            
+                            <v-rating
+                            :value="2"
+                            color="amber"
+                            dense
+                            half-increments
+                            readonly
+                            size="14"
+                            ></v-rating>
+                            <!-- レート：数値 -->
+                            <div class="grey--text ms-4">
+                            開発技術難易度 / CMS
+                            </div>
+                        </v-row>
+                        
+                        <!-- テキスト：サブタイトル -->
+                        
+                        <!--　チップたち -->
+                        <v-chip-group
+                        v-model="selection"
+                        active-class="deep-purple accent-4 white--text"
+                        column
+                        >
+                            <v-chip>WordPress</v-chip>
+                    
+                            <v-chip>Photoshop</v-chip>
+                            <v-chip>WordPress</v-chip>
+                    
+                            <v-chip>Photoshop</v-chip>
+                    
+                            <!-- <v-chip>8:00PM</v-chip>
+                    
+                            <v-chip>9:00PM</v-chip> -->
+                        </v-chip-group>
+                    </v-card-text>
+                    <!-- ディバイダー -->
+                    <v-divider class="mx-4"></v-divider>
+                    <!-- テキスト：詳細 -->
+                    <v-card-text>
+                        <div class="mb-4">
+                            2021年 / 課題制作 / 架空案件 / Ethica様
+                        </div>
+                        <!-- テキスト：内容 -->
+                        <div>ペルソナ企画、要件定義も含めワイヤーフレーム制作からCMS制作まで一貫担当。X-Serverの無料契約を利用したhttpURL制限サイトの構築。</div>
+                    </v-card-text>
+                    <!-- カード：アクション -->
+                    <v-card-actions>
+                        <!-- ボタン：予約 -->
+                        <v-btn
+                            color="deep-purple lighten-2"
+                            text
+                            @click="reserve"
+                        >
+                            more
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+                </template>
+                <!-- マテリアルUI：カード ここまで------------------------------------>
+
+                 <!-- マテリアルUI：カード ------------------------------------>
+                 <template>
+                    <!-- カード設計 -->
+                    <v-card
+                    :loading="loading"
+                    class="mx-auto my-12"
+                    max-width="374"
+                    >
+                    <template slot="progress">
+                    <v-progress-linear
+                        color="deep-purple"
+                        height="10"
+                        indeterminate
+                    ></v-progress-linear>
+                    </template>
+                    <!-- 画像 -->
+                    <v-img
+                    height="250"
+                    src="./images/web01end.png"
+                    ></v-img>
+                    <!-- テキスト：タイトル -->
+                    <v-card-title>コーポレートサイト</v-card-title>
+                    <!-- テキスト：詳細 -->
+                    <v-card-text>
+                        <!-- 横並び設定 -->
+                        <v-row
+                        align="center"
+                        class="mx-0"
+                        >
+                            <!-- レート：星デザイン -->
+                            <v-rating
+                            :value="2"
+                            color="amber"
+                            dense
+                            half-increments
+                            readonly
+                            size="14"
+                            ></v-rating>
+                            <!-- レート：数値 -->
+                            <div class="grey--text ms-4">
+                            開発技術難易度 / CMS
+                            </div>
+                        </v-row>
+                        <!-- テキスト：サブタイトル -->
+                        <div class="my-4 text-subtitle-1">
+                            2021年 / 課題制作 / 架空案件 / Ethica様
+                        </div>
+                        <!-- テキスト：内容 -->
+                        <div>ペルソナ設定や要件定義を含め、ワイヤーフレーム制作からCMS制作まで一貫担当。X-serverの無料契約を利用したサイトの構築</div>
+                    </v-card-text>
+                    <!-- ディバイダー -->
+                    <v-divider class="mx-4"></v-divider>
+                    <!-- テキスト：タイトル -->
+                    <v-card-title>Teck Stack</v-card-title>
+                    <!-- テキスト：詳細 -->
+                    <v-card-text>
+                        <!--　チップたち -->
+                        <v-chip-group
+                            v-model="selection"
+                            active-class="deep-purple accent-4 white--text"
+                            column
+                        >
+                            <v-chip>WordPress</v-chip>
+                    
+                            <v-chip>Photoshop</v-chip>
+                    
+                            <v-chip>PowerPoint</v-chip>
+                        </v-chip-group>
+                    </v-card-text>
+                    <!-- カード：アクション -->
+                    <v-card-actions>
+                        <!-- ボタン：予約 -->
+                        <v-btn
+                            color="deep-purple lighten-2"
+                            text
+                            @click="reserve"
+                        >
+                            more
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+                </template>
+                <!-- マテリアルUI：カード ここまで------------------------------------>
             </div>
         </v-app>
     </div>
