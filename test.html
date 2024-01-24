@@ -85,7 +85,9 @@
                 <form>
                     <label for="amount">{{ messageForAmount }}</label>
                     <!-- typeをtext,v-model.numberで数値化可能 -->
-                    <input type="text" id="amount" @input="handleInput" v-model.number="inputAmount" />
+                    <!-- <input type="text" id="amount" @input="handleInput" v-model.number="inputAmount" /> -->
+                    <!-- typeをtel,inputmodeをnumericで数字入力パネルが表示UX向上 -->
+                    <input type="tel" id="amount" @input="handleInput" v-model.number="inputAmount" inputmode="numeric" />
                 </form>
                 <!-- ０未満を非表示 -->
                 <p>結果：{{ category }}<span v-if="inputAmount >=0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>

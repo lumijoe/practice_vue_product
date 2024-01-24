@@ -96,7 +96,7 @@ new Vue({
         messageForCategory: 'カテゴリを選択してください',
         category: '',
         messageForAmount: '金額を入力してください',
-        inputAmount: 0
+        inputAmount: null
     },
     methods: {
         // 0未満を０に表示させる
