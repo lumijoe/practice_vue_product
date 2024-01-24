@@ -67,145 +67,148 @@
         <p>こんにちは!&nbsp;&nbsp;<span v-if="myName !==''">{{ myName }}さん!</span></p>
     </div>
 
-    <div id="appSix" style="background-color: beige;">
+    <div id="appSix">
         <v-app>
-            <h3>双方向データバインディング：フォーム：2.ラジオボタン</h3>        
-            <form>
-                <label for="category">{{ messageForCategory }}</label><br/>
-                <input type="radio" id="categoryEat" value="通勤飲食" v-model="category">
-                <label for="categoryEat">通勤飲食</label>
-                <input type="radio" id="categoryEat" value="通勤定期" v-model="category">
-                <label for="categoryTrain">通勤定期</label>
-                <input type="radio" id="categoryEat" value="土曜弁当" v-model="category">
-                <label for="categorySatLanch">土曜弁当</label>
-                <input type="radio" id="categoryEat" value="会社弁当" v-model="category">
-                <label for="categoryComLanch">会社弁当</label>
-            </form>
-            <form>
-                <label for="amount">{{ messageForAmount }}</label>
-                <!-- typeをtext,v-model.numberで数値化可能 -->
-                <input type="text" id="amount" @input="handleInput" v-model.number="inputAmount" />
-            </form>
-            <!-- ０未満を非表示 -->
-            <p>結果：{{ category }}<span v-if="inputAmount >=0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
-            
-            <!-- マテリアルUI：アバター -->
-            <v-avatar
-                color="primary"
-                rounded
-                size="56"
-            >Vue</v-avatar>
+            <div class="blue lighten-4" >
+                <h3 class="blue lighten-4">双方向データバインディング：フォーム：2.ラジオボタン</h3>        
+                <form>
+                    <label for="category">{{ messageForCategory }}</label><br/>
+                    <input type="radio" id="categoryEat" value="通勤飲食" v-model="category">
+                    <label for="categoryEat">通勤飲食</label>
+                    <input type="radio" id="categoryEat" value="通勤定期" v-model="category">
+                    <label for="categoryTrain">通勤定期</label>
+                    <input type="radio" id="categoryEat" value="土曜弁当" v-model="category">
+                    <label for="categorySatLanch">土曜弁当</label>
+                    <input type="radio" id="categoryEat" value="会社弁当" v-model="category">
+                    <label for="categoryComLanch">会社弁当</label>
+                </form>
+                <form>
+                    <label for="amount">{{ messageForAmount }}</label>
+                    <!-- typeをtext,v-model.numberで数値化可能 -->
+                    <input type="text" id="amount" @input="handleInput" v-model.number="inputAmount" />
+                </form>
+                <!-- ０未満を非表示 -->
+                <p>結果：{{ category }}<span v-if="inputAmount >=0">&nbsp;&nbsp;¥&nbsp;{{ inputAmount }}</span></p>
+                
+                <!-- マテリアルUI：アバター -->
+                <v-avatar
+                    color="primary"
+                    rounded
+                    size="56"
+                >Vue</v-avatar>
 
-            <!-- マテリアルUI：ボタンナビ -->
-            <v-bottom-navigation v-model="value">
-                <v-btn value="recent">
-                  <span>Recent</span>
-            
-                  <v-icon>mdi-history</v-icon>
-                </v-btn>
-            
-                <v-btn value="favorites">
-                  <span>Favorites</span>
-            
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-            
-                <v-btn value="nearby">
-                  <span>Nearby</span>
-            
-                  <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-            </v-bottom-navigation>
-            <br/>
-            <br/>
-
-            <!-- マテリアルUI：カード ------------------------------------>
-            <template>
-                <!-- カード設計 -->
-                <v-card
-                :loading="loading"
-                class="mx-auto my-12"
-                max-width="374"
-                >
-                <template slot="progress">
-                <v-progress-linear
-                    color="deep-purple"
-                    height="10"
-                    indeterminate
-                ></v-progress-linear>
-                </template>
-                <!-- 画像 -->
-                <v-img
-                height="250"
-                src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
-                ></v-img>
-                <!-- テキスト：タイトル -->
-                <v-card-title>Mos CAFE</v-card-title>
-                <!-- テキスト：詳細 -->
-                <v-card-text>
-                    <!-- 横並び設定 -->
-                    <v-row
-                    align="center"
-                    class="mx-0"
-                    >
-                        <!-- レート：星デザイン -->
-                        <v-rating
-                        :value="4.5"
-                        color="amber"
-                        dense
-                        half-increments
-                        readonly
-                        size="14"
-                        ></v-rating>
-                        <!-- レート：数値 -->
-                        <div class="grey--text ms-4">
-                        4.5 (413)
-                        </div>
-                    </v-row>
-                    <!-- テキスト：サブタイトル -->
-                    <div class="my-4 text-subtitle-1">
-                        $ • Italian, Cafe
-                    </div>
-                    <!-- テキスト：内容 -->
-                    <div>日本語の入力をすると雰囲気が変わる、英語の English text caseとは違う雰囲気</div>
-                </v-card-text>
-                <!-- ディバイダー -->
-                <v-divider class="mx-4"></v-divider>
-                <!-- テキスト：タイトル -->
-                <v-card-title>Tonight's availability 予約可</v-card-title>
-                <!-- テキスト：詳細 -->
-                <v-card-text>
-                    <!--　チップたち -->
-                    <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-                    >
-                        <v-chip>5:30PM</v-chip>
+                <!-- マテリアルUI：ボタンナビ -->
+                <v-bottom-navigation v-model="value">
+                    <v-btn value="recent">
+                    <span>Recent</span>
                 
-                        <v-chip>7:30PM</v-chip>
-                
-                        <v-chip>8:00PM</v-chip>
-                
-                        <v-chip>9:00PM</v-chip>
-                    </v-chip-group>
-                </v-card-text>
-                <!-- カード：アクション -->
-                <v-card-actions>
-                    <!-- ボタン：予約 -->
-                    <v-btn
-                        color="deep-purple lighten-2"
-                        text
-                        @click="reserve"
-                    >
-                        Reserve
+                    <v-icon>mdi-history</v-icon>
                     </v-btn>
-                </v-card-actions>
-            </v-card>
-            </template>
-            <!-- マテリアルUI：カード ここまで------------------------------------>
+                
+                    <v-btn value="favorites">
+                    <span>Favorites</span>
+                
+                    <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                
+                    <v-btn value="nearby">
+                    <span>Nearby</span>
+                
+                    <v-icon>mdi-map-marker</v-icon>
+                    </v-btn>
+                </v-bottom-navigation>
+                <br/>
+                <br/>
+
+                <!-- マテリアルUI：カード ------------------------------------>
+                <template>
+                    <!-- カード設計 -->
+                    <v-card
+                    :loading="loading"
+                    class="mx-auto my-12"
+                    max-width="374"
+                    >
+                    <template slot="progress">
+                    <v-progress-linear
+                        color="deep-purple"
+                        height="10"
+                        indeterminate
+                    ></v-progress-linear>
+                    </template>
+                    <!-- 画像 -->
+                    <v-img
+                    height="250"
+                    src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                    ></v-img>
+                    <!-- テキスト：タイトル -->
+                    <v-card-title>Mos CAFE</v-card-title>
+                    <!-- テキスト：詳細 -->
+                    <v-card-text>
+                        <!-- 横並び設定 -->
+                        <v-row
+                        align="center"
+                        class="mx-0"
+                        >
+                            <!-- レート：星デザイン -->
+                            <v-rating
+                            :value="4.5"
+                            color="amber"
+                            dense
+                            half-increments
+                            readonly
+                            size="14"
+                            ></v-rating>
+                            <!-- レート：数値 -->
+                            <div class="grey--text ms-4">
+                            4.5 (413)
+                            </div>
+                        </v-row>
+                        <!-- テキスト：サブタイトル -->
+                        <div class="my-4 text-subtitle-1">
+                            $ • Italian, Cafe
+                        </div>
+                        <!-- テキスト：内容 -->
+                        <div>日本語の入力をすると雰囲気が変わる、英語の English text caseとは違う雰囲気</div>
+                    </v-card-text>
+                    <!-- ディバイダー -->
+                    <v-divider class="mx-4"></v-divider>
+                    <!-- テキスト：タイトル -->
+                    <v-card-title>Tonight's availability 予約可</v-card-title>
+                    <!-- テキスト：詳細 -->
+                    <v-card-text>
+                        <!--　チップたち -->
+                        <v-chip-group
+                            v-model="selection"
+                            active-class="deep-purple accent-4 white--text"
+                            column
+                        >
+                            <v-chip>5:30PM</v-chip>
+                    
+                            <v-chip>7:30PM</v-chip>
+                    
+                            <v-chip>8:00PM</v-chip>
+                    
+                            <v-chip>9:00PM</v-chip>
+                        </v-chip-group>
+                    </v-card-text>
+                    <!-- カード：アクション -->
+                    <v-card-actions>
+                        <!-- ボタン：予約 -->
+                        <v-btn
+                            color="deep-purple lighten-2"
+                            text
+                            @click="reserve"
+                        >
+                            Reserve
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+                </template>
+                <!-- マテリアルUI：カード ここまで------------------------------------>
+            </div>
         </v-app>
     </div>
+    
 
     
 
